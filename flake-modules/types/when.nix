@@ -63,7 +63,7 @@ let
         '';
       };
       dayOfMonth = mkOption {
-        type = types.nullOr (coercedToList (types.ints.between 0 31));
+        type = types.nullOr (coercedToList (types.ints.between 0 32));
         default = null;
         description = ''
           An optional list of day of the month during which to create a job.
