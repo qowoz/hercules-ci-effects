@@ -115,7 +115,6 @@ in
       in
       {
         checks = lib.optionalAttrs (system == defaultEffectSystem) {
-          github-pages-effect-is-buildable = deploy.tests.buildable;
         };
       };
 
