@@ -197,6 +197,13 @@ let
           '';
           default = { };
         };
+        onEvent = mkOption {
+          type = types.lazyAttrsOf types.anything;
+          description = ''
+            onEvent
+          '';
+          default = { };
+        };
         ciSystems = mkOption {
           type = types.listOf types.str;
           default = flakeParts.config.systems;
@@ -223,7 +230,7 @@ let
           ciSystems = lib.genAttrs config.ciSystems (system: { });
         };
         out = {
-          inherit (config) onPush onSchedule ciSystems;
+          inherit (config) onPush onSchedule ciSystems onEvent;
         };
       };
     };
